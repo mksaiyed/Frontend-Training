@@ -1,0 +1,330 @@
+<!-- !Html is not case sensitive -->
+<!DOCTYPE html>
+<!-- defining Html5 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- represent char like A = 65 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS, Basics" />
+    <meta name="description" content="..." />
+    <title>Basic Html</title>
+    <link
+      rel="shortcut icon"
+      href="/html-css/images/favicon.jpg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- 
+      Html Validator : https://validator.w3.org/
+      Css Validator : https://jigsaw.w3.org/css-validator/ 
+      *It's use to validate our code.
+    -->
+
+    <h1>Hello World!!!</h1>
+    <h2 id="html">HTML</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nobis
+      delectus magnam at natus autem voluptas reprehenderit impedit fuga sed!
+    </p>
+    <h2 id="css">CSS</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores excepturi
+      ducimus quasi autem doloremque impedit?
+    </p>
+
+    <hr />
+
+    <div>
+      <h3>
+        How to display text as it is with both spaces and line breaks. Using
+        &lt;pre&gt; tag
+      </h3>
+      <p>hello Line 1 hello line 2 hello line 3</p>
+      <!-- Code formatter will automatically formate text to one line in p tag -->
+      <br />
+      <pre>
+        hello Line 1  
+        
+        hello line 2  
+        
+        hello line 3  
+      </pre>
+    </div>
+
+    <hr />
+
+    <div>
+      <h3>HTML Formatting Elements</h3>
+      <p>
+        <strong>strong</strong>
+        <em>emphasized</em>
+        <small>small_text</small>
+        <mark>mark</mark>
+        <del>Deleted</del>
+        <ins>underlined</ins>
+        <sub>subscripted</sub>
+        <sup>superscripted</sup>
+      </p>
+    </div>
+
+    <hr />
+
+    <div>
+      <h3>Quotes in html</h3>
+      <blockquote cite="https://www.google.com">
+        Hello this section is quoted from another source.
+      </blockquote>
+      <p>Single line Quote : <q>Nothing is Impossible</q></p>
+      <p>
+        <abbr title="Hyper Text Markup Language">HTML</abbr>,
+        <abbr title="Cascading Style Sheet">CSS</abbr>,
+        <abbr title="JavaScript">JS</abbr>
+      </p>
+      <address>
+        written by Abc Xyz. <br />
+        Visit us at: <br />
+        xyz.com <br />
+        a-12, fireHighs <br />
+        Gujarat. <br />
+      </address>
+      <p>I'm work at <cite>Maruti Techlabs</cite>.</p>
+      <!-- it defines any creative work (not person's name) -->
+      <bdo dir="rtl">Hello 1234</bdo>
+      <!-- This text will be written from right to left (rtl) -->
+    </div>
+
+    <hr />
+
+    <div>
+      <h3>Html Links</h3>
+      <!-- 
+        Absolute Urls (A full web address ) : https://www.google.com/
+        Relative Urls (link to the page withing the same website) : /html-css/images/google.jpeg 
+      -->
+      <ul>
+        <li><a href="https://www.google.com/" title="Google">Google</a></li>
+        <li>
+          <a href="https://www.google.com/" target="_blank" title="Google"
+            >Google in new Tab</a
+          >
+        </li>
+        <li><a href="#html">Go to Html</a></li>
+        <li><a href="#css">Go to Css</a></li>
+        <li><a href="mailto:xyz@gmail.com">Email Me</a></li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h3>Html Images</h3>
+      <img
+        src="/html-css/images/google.jpeg"
+        alt="Google"
+        width="200px"
+        height="150px"
+        style="object-fit: fill"
+      />
+      <img
+        src="/html-css/images/programming.gif"
+        alt="Gif"
+        width="100px"
+        height="100px"
+      />
+      <img
+        src="/html-css/images/workplace.jpg"
+        alt="Workplace"
+        usemap="#workmap"
+      />
+      <map name="workmap">
+        <area
+          shape="rect"
+          coords="34,44,270,350"
+          alt="Computer"
+          href="/html-css/images/mac.jpg"
+        />
+        <area
+          shape="rect"
+          coords="290,172,333,250"
+          alt="Phone"
+          href="/html-css/images/cellphone.jpg"
+        />
+        <area
+          shape="circle"
+          coords="337,300,44"
+          alt="Coffee"
+          href="/html-css/images/coffee.jpg"
+        />
+      </map>
+      <picture>
+        <!-- It's Just like media queries-->
+        <source media="(min-width: 650px)" srcset="img_food.jpg" />
+        <source media="(min-width: 465px)" srcset="img_car.jpg" />
+        <img src="img_girl.jpg" />
+      </picture>
+    </div>
+
+    <hr />
+
+    <div>
+      <h3>HTML Tables</h3>
+      <table border="1" style="border-collapse: collapse; width: 50%">
+        <tr>
+          <th>Sr No.</th>
+          <th colspan="2">Name</th>
+          <th>Sub</th>
+          <th>Marks</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Kaif</td>
+          <td>Saiyed</td>
+          <td>JavaScript</td>
+          <td>86</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jaydeep</td>
+          <td>Ladva</td>
+          <td>Java</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Faizan</td>
+          <td>Kothariya</td>
+          <td>Python</td>
+          <td>66</td>
+        </tr>
+      </table>
+    </div>
+
+    <hr />
+
+    <div>
+      <h3>HTML Lists</h3>
+      <ol>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ol>
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <h3>Html Iframe</h3>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/s4BibernJxU"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <iframe width="300" height="254" src="http://www.google.com"></iframe>
+      <!-- !The reason for this is, that Google is sending an "X-Frame-Options: SAMEORIGIN" response header. This option prevents the browser from displaying iFrames that are not hosted on the same domain as the parent page. -->
+      <p>
+        Here is Html&nbsp;Entities &lt;html&gt; &amp; &quot; &apos; &copy; &reg;
+      </p>
+      <p>ASCII Code :</p>
+      <ul>
+        <li>0 : 48 to 9 : 57</li>
+        <li>A : 65 to Z : 90</li>
+        <li>a : 97 to z : 122</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      <form
+        action="#"
+        autocomplete="on"
+        oninput="x.value = parseInt(a.value) + parseInt(b.value)"
+      >
+        <fieldset>
+          <legend>Html Forms</legend>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" /> <br />
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" /> <br />
+          <label for="fav_lang">Favorite Language:</label>
+          <input type="radio" id="html" name="fav_lang" value="HTML" /><label
+            for="html"
+            >HTML</label
+          >
+          <input type="radio" id="css" name="fav_lang" value="CSS" /><label
+            for="css"
+            >CSS</label
+          >
+          <input
+            type="radio"
+            id="javascript"
+            name="fav_lang"
+            value="JavaScript"
+          /><label for="javascript">JavaScript</label>
+          <br />
+          <label for="fav_vehicle">Favorite vehicle:</label>
+          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+          <label for="vehicle1"> I have a bike </label>
+          <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+          <label for="vehicle2"> I have a car</label>
+          <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+          <label for="vehicle3"> I have a Cycle</label>
+          <br />
+          <label for="country">Choose your country:</label>
+          <select id="country" name="country">
+            <option value="India">India</option>
+            <option value="Usa">Usa</option>
+            <option value="Saudi">Saudi</option>
+            <option value="China">China</option></select
+          ><br />
+          <label for="cars">Choose a car:</label>
+          <select id="cars" name="cars" size="3">
+            <option value="volvo">Volvo</option>
+            <option value="maruti">Maruti</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+            <option value="bmw">BMW</option>
+          </select>
+          <br />
+          <textarea name="message" id="textarea" cols="25" rows="5">
+          Type Here ...</textarea
+          ><br />
+          <input list="browsers" placeholder="Browsers" />
+          <datalist id="browsers">
+            <option value="Internet Explorer"></option>
+            <option value="Firefox"></option>
+            <option value="Chrome"></option>
+            <option value="Opera"></option>
+            <option value="Safari"></option>
+          </datalist>
+          <br />
+          0
+          <input type="range" id="a" name="a" value="50" />
+          100 +
+          <input type="number" id="b" name="b" value="50" />
+          =
+          <output name="x" for="a b"></output>
+          <br />
+          <button type="button" onclick="alert('Helloo !')">Click Me !</button>
+          <input type="submit" value="submit" />
+          <input type="reset" value="reset" />
+        </fieldset>
+      </form>
+    </div>
+
+    <hr />
+
+    <a href="#">Jump to Top</a>
+  </body>
+</html>
