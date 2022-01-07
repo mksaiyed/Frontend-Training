@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Basics</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Adding multiple fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong"
+    />
+    <!-- adding effect in fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia&effect=fire|neon|outline|emboss|shadow-multiple"
+    />
+    <style>
+      * {
+        /* universal selector  */
+        margin: 0;
+        padding: 0;
+        font-family: "Ubuntu", sans-serif;
+        /* box-sizing: border-box; */
+      }
+
+      p.center {
+        text-align: center;
+        color: red;
+      }
+
+      p.large {
+        font-size: 200%;
+      }
+
+      /* Background Properties */
+      /* body {
+        background-color: #fff;
+        background-image: url(/images/coffee.jpg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background: #fff url(/images/coffee.jpg) no-repeat top right;
+      } */
+
+      #b1 {
+        border: 1px solid #000;
+        padding: 15px;
+        margin: 10px 50px;
+        font-family: "Audiowide", sans-serif;
+      }
+      #b2 {
+        border-bottom: 1px solid #f00;
+        padding: 15px;
+        margin: 10px 50px;
+        font-family: "Sofia", sans-serif;
+      }
+      #b3 {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px 50px;
+        font-family: "Trirong", sans-serif;
+      }
+      #b4 {
+        border-left: 10px solid #00f;
+        background-color: #98c6fb;
+        padding: 15px;
+        margin: 10px 50px;
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      /* margin property auto will center element horizontally within it's container */
+
+      /*
+      Text alignment
+
+      for horizontally
+        text-align:center
+        text-align:justify
+        text-align:right
+        text-align:left
+
+      for vertically
+        vertically-align: baseline
+        vertically-align: text-top
+        vertically-align: super
+        vertically-align: text-bottom
+        vertically-align: sub
+
+      for direction<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia&effect=fire|neon|outline|emboss|shadow-multiple"
+    ase;
+      text-transform: capitalize;
+
+      */
+
+      span {
+        font-size: 35px;
+        padding: 10px;
+        font-family: "Sofia", sans-serif;
+      }
+      .shadow1 {
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+      }
+      .shadow2 {
+        text-shadow: 2px 2px 5px #ff0000;
+      }
+      .shadow3 {
+        text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+      }
+      .shadow4 {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="center">This heading will not be affected</h1>
+    <p class="center">This paragraph will be red and center-aligned.</p>
+    <p class="center large">
+      This paragraph will be red, center-aligned, and in a large font-size.
+    </p>
+    <p id="b1">I have border on all side.</p>
+    <p id="b2">I have a red border bottom border.</p>
+    <p id="b3">I have rounded borders.</p>
+    <p id="b4">I have a blue left border.</p>
+    <span class="shadow1 shadow">Text Shadow</span>
+    <span class="shadow2 shadow">Text Shadow</span>
+    <span class="shadow3 shadow">Text Shadow</span>
+    <span class="shadow4 shadow">Text Shadow</span>
+    <br />
+    <span class="font-effect-fire">Fire Effect</span>
+    <span class="font-effect-neon">Neon Effect</span>
+    <span class="font-effect-outline">Outline Effect</span>
+    <span class="font-effect-emboss">Emboss Effect</span>
+    <span class="font-effect-shadow-multiple">Multiple-shadow Effect</span>
+  </body>
+</html>
