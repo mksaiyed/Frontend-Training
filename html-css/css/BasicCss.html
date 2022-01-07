@@ -104,7 +104,7 @@
       span {
         font-size: 35px;
         padding: 10px;
-        font-family: "Sofia", sans-serif;
+        /* font-family: "Sofia", sans-serif; */
       }
       .shadow1 {
         color: white;
@@ -119,6 +119,211 @@
       .shadow4 {
         color: white;
         text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+      }
+
+      /* Css Links */
+      a.one:link {
+        color: #ff0000;
+      }
+      a.one:visited {
+        color: #0000ff;
+      }
+      a.one:hover {
+        color: #ffcc00;
+      }
+
+      a.two:link {
+        color: #ff0000;
+      }
+      a.two:visited {
+        color: #0000ff;
+      }
+      a.two:hover {
+        font-size: 150%;
+      }
+
+      a.three:link {
+        color: #ff0000;
+      }
+      a.three:visited {
+        color: #0000ff;
+      }
+      a.three:hover {
+        background: #66ff66;
+      }
+
+      a.four:link {
+        color: #ff0000;
+      }
+      a.four:visited {
+        color: #0000ff;
+      }
+      a.four:hover {
+        font-family: monospace;
+      }
+
+      a.five:link {
+        color: #ff0000;
+        text-decoration: none;
+      }
+      a.five:visited {
+        color: #0000ff;
+        text-decoration: none;
+      }
+      a.five:hover {
+        text-decoration: underline;
+      }
+
+      /* Css Positioning */
+      .box {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: red;
+        color: white;
+      }
+
+      #two {
+        position: relative;
+        /* position: absolute; */
+        /* position: fixed; */
+        /* position: sticky; */
+        /* position: static; */
+        /* z-index and positioning will not apply on static position */
+        top: 20px;
+        left: 20px;
+        background: blue;
+        z-index: -1;
+        /* now box 2 will placed behind the other box */
+        /* means the higher z-index can place over other items. */
+      }
+
+      /* Nav bar using Float */
+      .ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      .li {
+        float: left;
+      }
+
+      .li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .li a:hover {
+        background-color: #111;
+      }
+
+      .active {
+        background-color: red;
+      }
+
+      /* Pseudo class in css */
+      #hidden {
+        display: none;
+        background-color: yellow;
+        padding: 20px;
+      }
+
+      div:hover #hidden {
+        display: block;
+      }
+
+      p i:first-child {
+        color: blue;
+      }
+
+      /* The :lang pseudo-class allows you to define special rules for different languages. */
+      /* In the example below, :lang defines the quotation marks for <q> elements with lang="no": */
+      q:lang(no) {
+        quotes: "~""~";
+      }
+
+      #heading1::before {
+        content: url(/html-css/images/smiley.gif);
+      }
+
+      #heading2::after {
+        content: url(/html-css/images/smiley.gif);
+      }
+
+      /* The ::marker pseudo-element selects the markers of list items. */
+      ::marker {
+        color: red;
+        font-size: 23px;
+      }
+
+      /* The ::selection pseudo-element matches the portion of an element that is selected by a user. */
+
+      ::selection {
+        color: red;
+        background: yellow;
+      }
+
+      /* Css dropdown */
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .desc {
+        padding: 15px;
+        text-align: center;
+      }
+
+      /* Form styling */
+      input[type="text"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid red;
+      }
+      input[type="text"]:focus {
+        outline: none;
+      }
+
+      /* css counters */
+      body {
+        counter-reset: section;
+      }
+
+      .h1 {
+        counter-reset: subsection;
+      }
+
+      .h1::before {
+        counter-increment: section;
+        content: "Section " counter(section) ". ";
+      }
+
+      .h2::before {
+        counter-increment: subsection;
+        content: counter(section) "." counter(subsection) " ";
       }
     </style>
   </head>
@@ -142,5 +347,130 @@
     <span class="font-effect-outline">Outline Effect</span>
     <span class="font-effect-emboss">Emboss Effect</span>
     <span class="font-effect-shadow-multiple">Multiple-shadow Effect</span>
+    <hr />
+    <h3>Css Links</h3>
+    <p>
+      <strong
+        ><a class="one" href="#" target="_blank"
+          >This link changes color</a
+        ></strong
+      >
+    </p>
+    <p>
+      <strong
+        ><a class="two" href="#" target="_blank"
+          >This link changes font-size</a
+        ></strong
+      >
+    </p>
+    <p>
+      <strong
+        ><a class="three" href="#" target="_blank"
+          >This link changes background-color</a
+        ></strong
+      >
+    </p>
+    <p>
+      <strong
+        ><a class="four" href="#" target="_blank"
+          >This link changes font-family</a
+        ></strong
+      >
+    </p>
+    <p>
+      <strong
+        ><a class="five" href="#" target="_blank"
+          >This link changes text-decoration</a
+        ></strong
+      >
+    </p>
+    <hr />
+    <h3>Css Cursor property</h3>
+    <p>Mouse over the words to change the cursor.</p>
+    <span style="cursor: auto">auto |</span>
+    <span style="cursor: crosshair">crosshair |</span>
+    <span style="cursor: default">default |</span>
+    <span style="cursor: e-resize">e-resize |</span>
+    <span style="cursor: help">help |</span>
+    <span style="cursor: move">move |</span>
+    <span style="cursor: n-resize">n-resize |</span>
+    <span style="cursor: ne-resize">ne-resize |</span>
+    <span style="cursor: nw-resize">nw-resize |</span>
+    <span style="cursor: pointer">pointer |</span>
+    <span style="cursor: progress">progress |</span>
+    <span style="cursor: s-resize">s-resize |</span>
+    <span style="cursor: se-resize">se-resize |</span>
+    <span style="cursor: sw-resize">sw-resize |</span>
+    <span style="cursor: text">text |</span>
+    <span style="cursor: w-resize">w-resize |</span>
+    <span style="cursor: wait">wait</span>
+    <hr />
+    <h3>Css Positioning</h3>
+    <div class="box" id="one">One</div>
+    <div class="box" id="two">Two</div>
+    <div class="box" id="three">Three</div>
+    <div class="box" id="four">Four</div>
+    <hr />
+    <h3>Nav bar using Float</h3>
+    <ul class="ul">
+      <li class="li"><a href="#" class="active">Home</a></li>
+      <li class="li"><a href="#">News</a></li>
+      <li class="li"><a href="#">Contact</a></li>
+      <li class="li"><a href="#">About</a></li>
+    </ul>
+    <hr />
+    <h3>Pseudo class in CSS</h3>
+    <div>
+      Hover over this div element to show the p element
+      <p id="hidden">Tada! Here I am!</p>
+      <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+      <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+    </div>
+    <p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+    <hr />
+    <h1 id="heading1">This is a heading</h1>
+    <h1 id="heading2">This is a heading</h1>
+    <hr />
+    <h3>Dropdown Image</h3>
+    <div class="dropdown">
+      <img
+        src="/html-css/images/img_5terre.jpg"
+        alt="Cinque Terre"
+        width="100"
+        height="50"
+      />
+      <div class="dropdown-content">
+        <img
+          src="/html-css/images/img_5terre.jpg"
+          alt="Cinque Terre"
+          width="300"
+          height="200"
+        />
+        <div class="desc">Beautiful Cinque Terre</div>
+      </div>
+    </div>
+    <hr />
+    <form>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname" />
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" />
+    </form>
+    <hr />
+    <h1 class="h1">HTML/CSS Tutorials</h1>
+    <h2 class="h2">HTML</h2>
+    <h2 class="h2">CSS</h2>
+    <h2 class="h2">Bootstrap</h2>
+    <h2 class="h2">W3.CSS</h2>
+
+    <h1 class="h1">Scripting Tutorials</h1>
+    <h2 class="h2">JavaScript</h2>
+    <h2 class="h2">jQuery</h2>
+    <h2 class="h2">React</h2>
+
+    <h1 class="h1">Programming Tutorials</h1>
+    <h2 class="h2">Python</h2>
+    <h2 class="h2">Java</h2>
+    <h2 class="h2">C++</h2>
   </body>
 </html>
