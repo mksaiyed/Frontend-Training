@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>css position</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			div {
+				display: inline;
+				margin: 40px;
+				padding: 30px;
+				background-color: yellow;
+			}
+			.first {
+				position: static;
+				/* for default position */
+			}
+			.second {
+				position: relative;
+				/* changes are related to first position */
+				top: 200px;
+				left: 100px;
+			}
+			.third {
+				position: absolute;
+				/* changes are related to first parent box position  */
+				top: 200px;
+				left: 100px;
+			}
+			.fourth {
+				position: fixed;
+				top: 200px;
+				left: 450px;
+			}
+			.fifth {
+				position: static;
+			}
+
+			.first {
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="first">First</div>
+		<div class="second">second</div>
+		<div class="third">third</div>
+		<div class="fourth">fourth</div>
+		<div class="fifth">fifth</div>
+	</body>
+</html>

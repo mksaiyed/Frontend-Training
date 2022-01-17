@@ -1,0 +1,218 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Css Grid</title>
+		<style>
+			.container-1 > div {
+				background-color: #eee;
+				padding: 1em;
+			}
+			.container-1 > div:nth-child(odd) {
+				background-color: #ddd;
+			}
+			.container-1 {
+				display: grid;
+				grid-template-columns: 70% 30%;
+				grid-template-columns: 40% 30% 30%;
+
+				grid-column-gap: 1em;
+				grid-row-gap: 1em;
+				grid-gap: 1em; /* short */
+			}
+
+			.container-2 > div {
+				background-color: #eee;
+				padding: 1em;
+			}
+			.container-2 > div:nth-child(odd) {
+				background-color: #ddd;
+			}
+			.container-2 {
+				display: grid;
+				grid-template-columns: 1fr 2fr 1fr; /* recommended  */
+
+				grid-template-columns: repeat(3, 1fr);
+				/* here in repeat( number of time to repeat , area) */
+
+				grid-gap: 1em;
+
+				grid-auto-rows: 100px;
+				/* giving  same padding to the content */
+				grid-auto-rows: minmax(100px, auto);
+				/* here when some box has more content then it takes it space automatically */
+			}
+
+			/* nested in grid */
+			.nested {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-gap: 1em;
+				grid-auto-rows: 70px;
+			}
+			.nested > div {
+				border: #333 1px solid;
+				padding: 1em;
+			}
+
+			.container-3 > div {
+				background-color: #eee;
+				padding: 1em;
+			}
+			.container-3 > div:nth-child(odd) {
+				background-color: #ddd;
+			}
+			.container-3 {
+				display: grid;
+				grid-template-columns: 1fr 2fr 1fr;
+				grid-auto-rows: minmax(100px, auto);
+				grid-gap: 1em;
+
+				/* when can use justify-content and align-items in container of grid */
+				justify-content: center;
+				justify-content: start;
+				justify-content: stretch; /* default */
+
+				align-items: start;
+				align-items: center;
+				align-items: stretch; /* default */
+			}
+			/* and for different items in the grid container We can use align-self justify-self */
+			.box1 {
+				/* align-self: start; */
+
+				grid-column-start: 1;
+				grid-column-end: 3;
+				/* now here it's short form  */
+				grid-column: span 2; /*here it span 2 column */
+				grid-column: 1/3;
+				/* Here we are doing span means  1/3 span first and 2nd column  */
+				/* here it take 1 as 1st column starting line and 3 as 3rd line means 3rd column starting line OR 2nd column end line */
+
+				grid-row: 1/3;
+				/* same as column here it span 2 raw */
+			}
+			.box2 {
+				/* align-self: end; */
+				grid-column: 3;
+				/* it's not span and take only 3rd space */
+				grid-row: 1/3;
+			}
+			.box3 {
+				/* justify-self: end; */
+				grid-column: 2/4;
+				/* here when we take starting from 2 that's why box3 over to box4  */
+				grid-row: 3;
+				/* here it take default row no. 3 */
+			}
+			.box4 {
+				grid-column: 1;
+				/* it's default value for this box bcz it moves left (bcz of box 3) */
+				grid-row: 2/4;
+				/* from this we can directly override the elements */
+				/* bcz here rows default value foe this box is 3/4 and we change it to 2/4 then it over ride uper box */
+				border: 1px solid #333;
+			}
+
+			.container-4 > div {
+				background-color: #eee;
+				padding: 1em;
+			}
+			.container-4 > div:nth-child(odd) {
+				background-color: #ddd;
+			}
+			.container-4 {
+				display: grid;
+				grid-gap: 1em;
+				grid-auto-rows: 100px;
+
+				grid-template-areas:
+					"header header"
+					"sidebar content"
+					"sidebar content"
+					"footer footer";
+			}
+			.box-1 {
+				grid-area: header;
+			}
+			.box-2 {
+				grid-area: sidebar;
+			}
+			.box-3 {
+				grid-area: content;
+			}
+			.box-4 {
+				grid-area: footer;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Css grid is use for Two-dimension  -->
+		<div class="container-1">
+			<div>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod,
+				est dolorum eaque explicabo facilis veritatis molestiae necessitatibus
+				aut perspiciatis?
+			</div>
+			<div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+			<div>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod,
+				est dolorum eaque explicabo facilis veritatis molestiae necessitatibus
+				aut perspiciatis?
+			</div>
+			<div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+			<div>Hello</div>
+		</div>
+
+		<hr />
+		<hr />
+
+		<div class="container-2">
+			<div>Lorem ipsum dolor sit.</div>
+			<div>
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ab,
+				atque mollitia aliquid ex provident odio illo labore natus eaque cumque
+				tempora vero hic officiis laudantium praesentium maxime nostrum
+				excepturi?
+			</div>
+			<div class="nested">
+				<div>lorem</div>
+				<div>lorem</div>
+				<div>lorem</div>
+				<div>lorem</div>
+				<div>lorem</div>
+				<div>lorem</div>
+				<div>lorem</div>
+				<div>lorem</div>
+				<div>lorem</div>
+			</div>
+			<div>Lorem ipsum dolor sit.</div>
+			<div>Lorem ipsum dolor sit.</div>
+			<div>Lorem ipsum dolor sit.</div>
+			<div>Lorem ipsum dolor sit.</div>
+			<div>Lorem ipsum dolor sit.</div>
+			<div>Lorem ipsum dolor sit.</div>
+		</div>
+
+		<hr />
+		<hr />
+
+		<div class="container-3">
+			<div class="box box1">box-1</div>
+			<div class="box box2">box-2</div>
+			<div class="box box3">box-3</div>
+			<div class="box box4">box-4</div>
+		</div>
+
+		<hr />
+		<hr />
+
+		<div class="container-4">
+			<div class="box-1">Box 1</div>
+			<div class="box-2">Box 2</div>
+			<div class="box-3">Box 3</div>
+			<div class="box-4">Box 4</div>
+		</div>
+	</body>
+</html>

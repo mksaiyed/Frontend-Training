@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Flex box</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			/* Using   display:flex;    we can use Flex-box properties */
+			.container {
+				/* initialize the container as flex-box. */
+				display: flex;
+				border: 5px solid black;
+			}
+
+			p.item {
+				border: 2px solid red;
+				margin: 20px;
+
+				padding: 15px;
+			}
+
+			/* Flex-properties For Flex container */
+			.container {
+				flex-direction: row; /* By default  */
+				/* 
+            same  as try any 
+
+            flex-direction: row;
+
+            flex-direction: column;
+
+            flex-direction: row-reverse;
+
+            flex-direction: row-reverse; 
+
+            */
+
+				flex-wrap: nowrap; /* By default */
+				/* 
+            same as try any
+
+            flex-wrap: nowrap ;
+                
+            flex-wrap: wrap ;      
+                
+            flex-wrap: wrap-reverse ;
+
+            */
+
+				flex-flow: row nowrap;
+
+				justify-content: center; /* this all properties for horizontally  */
+				/* 
+            same as try any 
+
+            justify-content : center ;
+            
+            justify-content : space-between ;
+            
+            justify-content : space-evenly ;
+            
+            justify-content : space-around ;
+                         
+            */
+
+				align-items: center; /* this all properties foe vertically  */
+				/*  
+            same as try any
+
+            align-items: center ;
+            
+            align-items: flex-start ;    --> By default
+                
+            align-items: flex-end ;
+            
+            ḁ̥lign-items: stretch ;
+            
+            */
+			}
+
+			/* Flex properties for Flex items */
+			p.item {
+				background-color: yellow;
+
+				/* 
+             --> order is for positioning of element  
+             
+            ex.
+            order : 4 ; 
+
+            */
+
+				/*  
+            flex-glow : 3 ;
+             
+            flex-shrink : 2 ;
+             
+            flex-basis : 320px ;
+             
+                flex : 3            2               320px       ;
+                flex : flex-glow    flex-shrink     flex-basis  ;     
+
+            */
+
+				/* 
+
+            align-self : flex-start ;
+
+            align-self : flex-end ;
+
+            align-self : center ;
+
+            */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<p class="item">First</p>
+			<p class="item">Second</p>
+			<p class="item">Third</p>
+			<p class="item">Fourth</p>
+		</div>
+	</body>
+</html>
