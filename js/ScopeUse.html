@@ -1,0 +1,25 @@
+<script>
+	// use of scope in JS
+	console.log(this);
+
+	var i = 10;
+	// if we use let then it gives undefine bcz let is block scope & var is global scope
+	function myf2() {
+		var i = 1;
+		console.log(i); //1
+		console.log(this.i); //10
+		// return this.i;
+		// this will refer to global object
+	}
+	myf2(); //10
+	console.log(myf2()); // undefined
+	// because here we want to log the function and myf2() is not return anything
+
+	const myFunction = {
+		i: 5,
+		myf: function () {
+			console.log(this.i);
+		},
+	};
+	myFunction.myf();
+</script>
