@@ -110,3 +110,17 @@ console.log(fruits.indexOf("Apple")); //3
 //* The findIndex() method returns the index of the first array element that passes a test function.
 const n6 = numbers.findIndex((n) => n < 5);
 console.log(n6); // 1
+
+//? Array Reduce function
+// syntax
+// array.reduce( function(total, currentValue, currentIndex, arr), initialValue )
+const array1 = [1, 2, 3, 4];
+const reducer = (previousValue, currentValue) => previousValue + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15

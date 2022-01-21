@@ -1,5 +1,9 @@
 //! The JavaScript this keyword refers to the object it belongs to.
 
+console.log(this);
+// in Node.js  = gives empty scope
+// in browser = gives access to Window object
+
 /*
 * In a method, this refers to the owner object.
 fullName : function() {
@@ -45,7 +49,25 @@ const person = {
 * With arrow functions the this keyword always represents the object that defined the arrow function.
 */
 
-// call , apply , bind
+//? This keyword in Arrow and regular function
+const obj1 = {
+	i: 1,
+	f: () => {
+		console.log(this);
+		// here it gives global scope bcz arrow fn doesn't have any binding.
+	},
+};
+const obj2 = {
+	i: 1,
+	f: function () {
+		console.log(this);
+		// here it represent the Obj
+	},
+};
+obj1.f();
+obj2.f();
+
+//? call , apply , bind
 
 function add(c, d) {
 	return this.a + this.b + c + d;
@@ -54,10 +76,10 @@ const o = { a: 1, b: 3 };
 // both will use o as execution context.
 
 console.log(add.call(o, 5, 7)); // 16
-// all arguments separate values
+//! all arguments separate values
 
 console.log(add.apply(o, [10, 20])); // 34
-// value pass as array
+//! value pass as array
 
 const newAdd = add.bind(o);
 console.log(newAdd(10, 20)); // 34

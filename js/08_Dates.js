@@ -2,7 +2,7 @@
 //* new Date()
 //* new Date(year, month, day, hours, minutes, seconds, milliseconds)
 //* new Date(milliseconds)
-//* new Date(date string
+//* new Date(date string)
 
 const d1 = new Date();
 console.log(d1);

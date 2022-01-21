@@ -36,6 +36,14 @@ fruits.delete("apples");
 console.log(fruits.has("apples"));
 
 console.log(fruits.entries());
+
 for (x of fruits) {
 	console.log(x);
 }
+
+// ForEach
+fruits.forEach((x) => console.log(x));
+//* you can see it only prints the values of map
+//* If you want to print both key-value then
+fruits.forEach((value, key) => console.log(`Key: ${key} Value: ${value}`));
+//* Here forEach by default take value as first parameter.

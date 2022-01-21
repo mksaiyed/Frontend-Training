@@ -18,6 +18,7 @@ in JavaScript
 
 //! Variables
 
+// Var have Global scope
 var fname = "KaiF";
 let email = "Kaif@gmail.com";
 const no = "123";

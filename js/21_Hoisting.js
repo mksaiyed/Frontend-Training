@@ -18,3 +18,7 @@
 
 //? Hoisting in const
 //* Just like let, const declarations are hoisted to the top but are not initialized.
+
+//? Hoisting in Functions
+//* Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.
+//* Because of this, JavaScript functions can be called before they are declared:

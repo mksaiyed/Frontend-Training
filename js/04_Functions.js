@@ -50,3 +50,32 @@ var getrole = getUserRole("kaif", "admin");
 console.log(getrole); // kaif is admin
 // or we can simply use directly
 console.log(getUserRole("kaif", "user")); // kaif is user
+
+//? The arguments.length property returns the number of arguments received when the function was invoked:
+function myf(a, b) {
+	return arguments.length;
+}
+console.log(myf(3, 4)); //2
+console.log(myf(3)); //1
+console.log(myf()); //0
+
+// useful Ex.
+x = findMax(1, 123, 500, 115, 44, 88);
+console.log(x);
+function findMax() {
+	let max = -Infinity;
+	for (let i = 0; i < arguments.length; i++) {
+		if (arguments[i] > max) {
+			max = arguments[i];
+		}
+	}
+	return max;
+}
+
+//* Arguments are Passed by Value
+// If a function changes an argument's value, it does not change the parameter's original value.
+// Changes to arguments are not visible (reflected) outside the function.
+
+//? Objects are Passed by Reference
+// If a function changes an object property, it changes the original value.
+// Changes to object properties are visible (reflected) outside the function.

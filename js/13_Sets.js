@@ -33,3 +33,6 @@ console.log(letters.values());
 for (x of letters.values()) {
 	console.log(x);
 }
+
+// forEach
+letters.forEach((x) => console.log(x));
