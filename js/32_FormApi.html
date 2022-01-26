@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form Api</title>
+	</head>
+	<body>
+		<h1>Form Validation API</h1>
+		<p>Enter a number and click check:</p>
+		<input id="input" type="number" min="100" max="300" required />
+		<button onclick="check()">Check</button>
+		<p>
+			If the number is less than 100 or greater than 300, an error message will
+			be displayed.
+		</p>
+		<p id="demo1"></p>
+		<p id="demo2"></p>
+		<p id="demo3"></p>
+		<script>
+			function check() {
+				let input = document.getElementById("input");
+				let demo1 = document.getElementById("demo1");
+				let demo2 = document.getElementById("demo2");
+				let demo3 = document.getElementById("demo3");
+				if (!input.checkValidity()) {
+					demo1.innerHTML = input.validationMessage;
+				} else {
+					demo1.innerHTML = "Input OK";
+				}
+				if (input.validity.rangeOverflow) {
+					demo2.innerHTML = "Overflow Value";
+				} else if (input.validity.rangeUnderflow) {
+					demo3.innerHTML = "Underflow Value";
+				} else {
+					demo2.innerHTML = "";
+					demo3.innerHTML = "";
+				}
+			}
+		</script>
+	</body>
+</html>

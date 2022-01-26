@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Events</title>
+		<style>
+			div {
+				width: 120px;
+				height: 120px;
+				border: 2px solid black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Simple</h2>
+		<div id="box1">
+			<button id="btn1">Click</button>
+		</div>
+		<hr />
+		<h2>Using Event .stopPropagation()</h2>
+		<div id="box2">
+			<button id="btn2">Click</button>
+		</div>
+		<hr />
+		<h2>Using Event .preventDefault()</h2>
+		<a href="https://www.google.com" target="_blank" id="link">Google</a>
+		<p>Enable Link : <input type="checkbox" id="cb" /></p>
+
+		<script>
+			const box1 = document.getElementById("box1");
+			const box2 = document.getElementById("box2");
+			const btn1 = document.getElementById("btn1");
+			const btn2 = document.getElementById("btn2");
+			const link = document.getElementById("link");
+			const cb = document.getElementById("cb");
+
+			box1.addEventListener("click", function () {
+				this.style.backgroundColor = "red";
+			});
+			btn1.addEventListener("click", function () {
+				this.style.backgroundColor = "red";
+			});
+
+			box2.addEventListener("click", function () {
+				this.style.backgroundColor = "red";
+			});
+			btn2.addEventListener("click", function (e) {
+				e.stopPropagation();
+				this.style.backgroundColor = "red";
+			});
+
+			link.addEventListener("click", function (e) {
+				if (!cb.checked) {
+					e.preventDefault();
+				}
+			});
+		</script>
+	</body>
+</html>

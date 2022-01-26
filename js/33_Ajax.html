@@ -1,0 +1,95 @@
+<script>
+	//! Ajax (Asynchronous JavaScript And XML)
+	// Ajax helps in fetching data asynchronously without interfering with the existing page.
+	// No page Reload/Refresh.
+	// Modern websites use JSON instead of XML Data transfer.
+
+	//? How to use
+	// Ajax uses XMLHttpRequest Object (XHR Object) for this.
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AJAX in Js</title>
+	</head>
+</html>
+<body>
+	<h2>Open Console on Browser ( Press F12 )</h2>
+	<button type="button" id="fetchBtnGet">Fetch Data by GET</button>
+	<button type="button" id="fetchBtnPost">Fetch Data by POST</button>
+
+	<script>
+		let fetchBtnGet = document.getElementById("fetchBtnGet");
+		fetchBtnGet.addEventListener("click", buttonClickGet);
+		let fetchBtnPost = document.getElementById("fetchBtnPost");
+		fetchBtnPost.addEventListener("click", buttonClickPost);
+
+		function buttonClickGet() {
+			console.log("fetch data by GET Method");
+			// Instantiate an xhr object
+			const xhr = new XMLHttpRequest();
+			// Open the object
+			xhr.open("GET", "https://reqres.in/api/users/1", true);
+			// Here true for Async process
+			// What to do on progress (optional)
+			xhr.onprogress = function () {
+				console.log("On progress");
+			};
+			// Ready states
+			// 0: request not initialized
+			// 1: server connection established
+			// 2: request received
+			// 3: processing request
+			// 4: request finished and response is ready
+			xhr.onreadystatechange = function () {
+				console.log("Ready state is :", this.readyState);
+			};
+			// status
+			// 200: "OK"
+			// 403: "Forbidden"
+			// 404: "Page not found"
+			// What to do when response is ready
+			// onLoad run after Ready state is 4
+			xhr.onload = function () {
+				if (this.status === 200) {
+					console.log("Response Status OK");
+					// console.log("DATA :", this.responseText);
+				} else {
+					console.log("Some ERROR");
+				}
+			};
+			// Or Directly we can combine above 2 methods like
+			xhr.onreadystatechange = function () {
+				console.log("Ready state is :", this.readyState);
+				if (this.readyState == 4 && this.status == 200) {
+					console.log("DATA :", this.responseText);
+				}
+			};
+			// send the request
+			xhr.send();
+			console.log("We are done!");
+		}
+		function buttonClickPost() {
+			console.log("fetch data by POST Method");
+			// Instantiate an xhr object
+			const xhr = new XMLHttpRequest();
+			// Open the object
+			// USE THIS FOR POST REQUEST
+			xhr.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
+			xhr.getResponseHeader("Content-Type", "application/json");
+			xhr.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					console.log("DATA :", this.responseText);
+				}
+			};
+			const params = JSON.stringify({
+				title: "Web Api",
+				body: "POST Method",
+				userId: 1,
+			});
+			// here data is in JS Object and we convert it to JSON String.
+			// send the request
+			xhr.send(params);
+		}
+	</script>
+</body>

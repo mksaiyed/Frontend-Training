@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Web Api</title>
+	</head>
+	<body>
+		<h1>Open Console on Browser ( Press F12 )</h1>
+		<script>
+			// fetch always gives Promise
+			fetch("https://api.chucknorris.io/jokes/random")
+				.then((response) => {
+					// console.log("RESPONSE :", response);
+					// because here we want body info and It's in Json formate then
+					// console.log("RESPONSE (BODY PART) :", response.json());
+					// now we got another promise in body part that's why we have to add 2nd .then().
+					return response.json();
+					// now this will take as an input in 2nd .then()
+				})
+				.then((data) => {
+					// console.log("DATA :", data);
+					// but we want the value inside the data as Final output main JOKE.
+					let joke = data.value;
+					console.log("JOKE :", joke);
+				})
+				.catch((err) => {
+					console.log("ERROR :", err);
+				});
+
+			// Just like this let's call another api
+			fetch("https://reqres.in/api/users")
+				.then((res) => res.json())
+				.then((data) => console.log("DATA :", data))
+				.catch((err) => console.log("ERROR :", err));
+			// but err doesn't call because in fetch it gives err when we have network error or any browser err Fetch always success
+			// but if we get 404 error means api data not found then it can check at res side with (res.ok) when it gives true means thats no error.
+			// Like ex. here we try to fetch 66 no. user
+			fetch("https://reqres.in/api/users/66").then((res) => {
+				if (res.ok) {
+					console.log("SUCCESS");
+				} else {
+					console.log("FAILED");
+				}
+			});
+
+			// Now using POST method
+			// here for post we have to pass an argument
+			fetch("https://jsonplaceholder.typicode.com/posts", {
+				method: "post",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					title: "Web Api",
+					body: "POST Method",
+					userId: 1,
+				}),
+				// here our data is in Js Object that's why we have to stringify it to JSON but if the data is in string formate then you can directly pass.
+			})
+				.then((response) => response.json())
+				.then((data) => console.log("POST METHOD :", data))
+				.catch((err) => console.log("ERROR :", err));
+		</script>
+	</body>
+</html>

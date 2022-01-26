@@ -19,20 +19,25 @@ window.resizeTo() - resize the current window
 * The window.screen object contains information about the user's screen.
 * The window.screen object can be written without the window prefix.
 * Properties:
-screen.width
+// The screen.width property returns the width of the visitor's screen in pixels.
+screen.width 
 screen.height
+// The screen.availWidth property returns the width of the visitor's screen, in pixels, minus interface features like the Windows Taskbar.
 screen.availWidth
 screen.availHeight
+// The screen.colorDepth property returns the number of bits used to display one color.
+// The screen.pixelDepth property returns the pixel depth of the screen.
 screen.colorDepth
 screen.pixelDepth
+// For modern computers, Color Depth and Pixel Depth are equal.
 
 * Window Location
 * The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page.
 * The window.location object can be written without the window prefix.
-location.href returns the href (URL) of the current page
-location.hostname returns the domain name of the web host
-location.pathname returns the path and filename of the current page
-location.protocol returns the web protocol used (http: or https:)
+location.href returns the href (URL) of the current page // https://www.w3schools.com/js/js_window.asp 
+location.hostname returns the domain name of the web host // www.w3schools.com
+location.pathname returns the path and filename of the current page // /js/js_window.asp
+location.protocol returns the web protocol used (http: or https:) // https:
 location.assign() loads a new document
 
 * Window History
@@ -44,11 +49,15 @@ history.forward() - same as clicking forward in the browser
 * Window Navigator
 * The window.navigator object contains information about the visitor's browser.
 * The window.navigator object can be written without the window prefix.
-navigator.appName
-navigator.appCodeName
-navigator.platform
-navigator.cookieEnabled
-navigator.language
+navigator.appName // Netscape
+navigator.appCodeName // Mozilla
+navigator.platform // win32
+navigator.product // Gecko
+navigator.cookieEnabled // true
+navigator.language // en-GB
+navigator.appVersion 
+navigator.geolocation.getCurrentPosition(showPosition) // Know exact location 
+// Gives the latitude and longitude of the user's position
 
 * JavaScript Cookies
 * Cookies let you store user information in web pages.
