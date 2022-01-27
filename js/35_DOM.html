@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>DOM Events</title>
+	</head>
+	<body>
+		<div
+			id="div1"
+			data-test="This is Test Data"
+			data-first-name="This is First Name Data"
+		>
+			<span>Span-1</span>
+			<span>Span-2</span>
+		</div>
+		<script>
+			const body = document.body;
+			// body.append("Hello");
+			// You can add String and Html Elements too.
+			// body.appendChild(div);
+			// You can NOT add String Only html Elements
+			// That's Why we can use append more
+			const div = document.createElement("div");
+			div.innerText = "Hello";
+			// div.textContent = "Hello";
+			// both works same But Diff is discuss below
+			// If you want to render Html then
+			div.innerHTML = "<strong>Hello !</strong>";
+			// It's not Secure way to use
+			body.append(div);
+
+			// Diff between innerHtml And textContent
+			const div1 = document.querySelector("#div1");
+			console.log(div1.textContent);
+			console.log(div1.innerText);
+			console.log(div1.innerHTML);
+
+			// Data Attributes
+			console.log(div1.dataset);
+			console.log(div1.dataset.test);
+			console.log(div1.dataset.firstName);
+			div1.dataset.lastName = "This is Last Name";
+			// here you can see first-name convert to CamelCase firstName Same Thing use in CSS Also Like
+			// & lastName Will be added as data-last-name
+			div1.style.color = "red";
+			div1.style.backgroundColor = "yellow";
+		</script>
+	</body>
+</html>

@@ -47,11 +47,13 @@
 				this.style.backgroundColor = "red";
 			});
 			btn2.addEventListener("click", function (e) {
+				// console.log(e);
 				e.stopPropagation();
 				this.style.backgroundColor = "red";
 			});
 
 			link.addEventListener("click", function (e) {
+				// console.log(e);
 				if (!cb.checked) {
 					e.preventDefault();
 				}
